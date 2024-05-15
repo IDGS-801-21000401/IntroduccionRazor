@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    //Definimos un arreglo de strings
+    string[] nombres = { "Angel", "America", "Juan" };
+    int i = Array.IndexOf(nombres, "Juan") + 1;
+    int len = nombres.Length;
+    }
+
+<div>
+    <p>
+        <ol>
+            @foreach (var nombre in nombres)
+            {
+                <li>@nombre</li>
+            }
+        </ol>
+        La longitud del arreglo es de: @len
+        <br />
+        <br />
+        Juan está en la posición: @i
+        <br />
+        <br />
+    </p>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@page
+@model IntroduccionRazor.Pages.Programa1Model
+@{
+}
+
+<div>
+    <h3>Programa 1</h3>
+    <p>Calculadora de Índice de Masa Corporal.</p>
+
+    <form method="post">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" min="0" step="0.01" required>
+        <br>
+        <br>
+
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" name="altura" min="0" required>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+
+    @if (Model.Resultado != null)
+    {
+        <br />
+        <h2>Resultado:</h2>
+        <br />
+        <p>Tu IMC es: @Model.IMC</p>
+        <br />
+        <p>Clasificación de peso: @Model.Resultado</p>
+    }
+
+
+</div>

@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<!-- Bloque Simple -->
+
+@{
+    var nombre = "Angel";
+}
+
+
+
+<!-- Bloque multinea-->
+@{
+    var Bienvenido=" Bienvenido a nuestro sitio..." ;
+    var diaSemana = DateTime.Now.DayOfWeek;
+    var mensajeBienvenida = Bienvenido + "En León ahora es: " + diaSemana;
+}
+
+<div>
+    <p>
+        Sintaxis básica de Razor
+        <br />
+        <p>El nombre es: @nombre</p>
+        @mensajeBienvenida
+    </p>
+</div>

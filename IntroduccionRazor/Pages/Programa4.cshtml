@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+
+@{
+    
+    Random random = new Random();
+
+    int[] numeros = new int[20];
+    for (int i = 0; i < 20; i++)
+    {
+        numeros[i] = random.Next(101); // El límite superior (101) es exclusivo
+    }
+
+    // Calcular la suma de los números
+    int suma = 0;
+    foreach (int num in numeros)
+    {
+        suma += num;
+    }
+
+    // Calcular el promedio
+    double promedio = (double)suma / numeros.Length;
+
+    // Calcular la moda
+    var conteo = new Dictionary<int, int>();
+    int moda = 0;
+    int maxFrecuencia = 0;
+    foreach (int num in numeros)
+    {
+        if (!conteo.ContainsKey(num))
+            conteo[num] = 0;
+
+        conteo[num]++;
+
+        if (conteo[num] > maxFrecuencia)
+        {
+            moda = num;
+            maxFrecuencia = conteo[num];
+        }
+    }
+
+    // Calcular la mediana
+    Array.Sort(numeros);
+    double mediana;
+    if (numeros.Length % 2 == 0)
+    {
+        mediana = (numeros[numeros.Length / 2 - 1] + numeros[numeros.Length / 2]) / 2.0;
+    }
+    else
+    {
+        mediana = numeros[numeros.Length / 2];
+    }
+}
+
+<div>
+    <h3>Programa 4</h3>
+    <p>Arreglo de números aleatorios de 0 a 100.</p>
+    <br />
+    <br />
+    <ol>
+        @foreach (var numero in numeros)
+        {
+            <li>@numero</li>
+        }
+    </ol>
+    <p>Suma: @suma</p>
+    <p>Promedio: @promedio</p>
+    <p>Moda: @moda</p>
+    <p>Mediana: @mediana</p>
+</div>
+

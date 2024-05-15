@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+
+}
+
+<div>
+    <h3>Ciclos</h3>
+    @{
+        var index = 1;
+        while (index <= 100)
+        {
+            <p>@index </p>
+            index += 1;
+        }
+    }
+
+    <h3>Do While</h3>
+    @{
+        var index2 = 1;
+        do
+        {
+            <p> @index2 </p>
+            index2 += 1;
+        } while (index2 <= 10);
+    }
+
+    <h3>For</h3>
+    @{
+        for (var i = 0; i < 100; i++)
+        {
+            <p> @i </p>
+        };
+
+    }
+
+    <h3>For Each</h3>
+    @{
+        foreach (var x in HttpContext.Request.Headers)
+        {
+            <p> @x </p>
+        };
+
+    }
+</div>

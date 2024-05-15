@@ -1,0 +1,38 @@
+﻿@page
+@model Programa2Model
+@{
+}
+
+<h3>Programa 2</h3>
+<p>Codificación y decodifiación por sustitución.</p>
+<br>
+<br>
+
+<form method="post">
+    <label for="mensaje">Mensaje:</label>
+    <input type="text" id="mensaje" name="mensaje" required>
+    <br>
+    <br>
+
+    <label for="n">Valor de n:</label>
+    <input type="number" id="n" name="n" min="1" required>
+    <br>
+    <br>
+
+    <label for="modo">Modo:</label>
+    <select id="modo" name="modo">
+        <option value="codificar">Codificar</option>
+        <option value="decodificar">Decodificar</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.resultado))
+{
+    <h2>Resultado:</h2>
+    <p>@Model.resultado</p>
+}
+

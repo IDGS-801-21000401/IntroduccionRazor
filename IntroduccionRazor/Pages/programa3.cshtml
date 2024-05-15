@@ -1,0 +1,36 @@
+﻿@page
+@model IntroduccionRazor.Pages.programa3Model
+@{
+}
+
+<div>
+    <h3>Programa 3</h3>
+    <p>Evaluación de la expresión (𝑎𝑥+𝑏𝑦)𝑛.</p>
+    <form method="POST">
+        <p>Valor de a:</p>
+        <input asp-for="a" type="number" step="0.1" />
+        <br />
+        <br />
+        <p>Valor de b:</p>
+        <input asp-for="b" type="number" step="0.1" />
+        <br />
+        <br />
+        <p>Valor de x:</p>
+        <input asp-for="x" type="number" step="0.1" />
+        <br />
+        <br />
+        <p>Valor de y:</p>
+        <input asp-for="y" type="number" step="0.1" />
+        <br />
+        <br />
+        <p>Valor de n:</p>
+        <input asp-for="n" type="number" step="0.1" />
+        <br />
+        <br />
+        <input type="submit" class="btn btn-success" value="Enviar" />
+        @if(Model.resultado != 0){
+                <p>Resultado: @Model.resultado</p>
+            }
+    </form>
+</div>
+

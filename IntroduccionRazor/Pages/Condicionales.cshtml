@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    var calificacionAmerica = 10;
+}
+
+<div>
+    <h3>Instrucciones de condicionales</h3>
+    <p>Tu calificación es de : @calificacionAmerica</p>
+
+    @if(calificacionAmerica >= 8)
+{
+           <p>¡Excelente! Tu calificación es aprobatoria! :)</p>
+} else
+{
+            <p>¡Oh no!, Tu calificación es reprobatoria! :( </p>
+}
+    <br/>
+    <h3>Instrucciones para Else - IF</h3>
+    @{
+        var precioAmerica = 20;
+    }
+    <p>El precio total del producto es @precioAmerica</p>
+    @if(precioAmerica >= 30)
+{
+            <p>¡Oh no!, El precio es alto!.</p>
+} else if(precioAmerica < 30)
+{
+            <p>¡Bieeen!, El precio es decente.</p>
+} else
+{
+            <p>¡Excelente!, El precio es de lo mejor!.</p>
+}
+
+    <h3>Condicionales múltiples</h3>
+    @{
+        var diaSemana = DateTime.Now.DayOfWeek;
+        var dia = diaSemana.ToString();
+        var mensaje = "";
+
+
+}
+
+    @switch (dia) {
+            case "Monday":
+                mensaje = "¡Oh no!, Es el primer dia de la semana!, Lunes.";
+                break;
+            case "Friday":
+                mensaje = "¡Bien!, Es el último dia de la semana!, Viernes.";
+                break;
+            case "Saturday":
+                mensaje = "¡Bien!, Es fin de semana!, Sábado.";
+                break;
+            default:
+                mensaje = "Hoy es: " + dia;
+                break;
+        }
+    <p>@mensaje</p>
+    <br/>
+</div>
