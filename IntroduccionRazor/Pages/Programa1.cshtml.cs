@@ -17,6 +17,7 @@ namespace IntroduccionRazor.Pages
 
         public double IMC { get; set; }
         public string Resultado { get; set; }
+        public string Imagen { get; set; }
 
         public void OnPost()
         {
@@ -35,26 +36,32 @@ namespace IntroduccionRazor.Pages
         {
             if (imc < 18)
             {
+                Imagen = "peso_bajo.jpeg";
                 return "Peso Bajo";
             }
             else if (imc >= 18 && imc < 25)
             {
+                Imagen = "peso_normal.jpeg";
                 return "Peso Normal";
             }
             else if (imc >= 25 && imc < 27)
             {
+                Imagen = "sobrepeso.webp";
                 return "Sobrepeso";
             }
             else if (imc >= 27 && imc < 30)
             {
+                Imagen = "obesidad_tipo1.jpeg";
                 return "Obesidad grado I";
             }
             else if (imc >= 30 && imc < 40)
             {
+                Imagen = "obesidad_tipo2.jpeg";
                 return "Obesidad grado II";
             }
             else
             {
+                Imagen = "obesidad_tipo3.jpeg";
                 return "Obesidad grado III";
             }
         }
